@@ -1,17 +1,12 @@
 import { Logger, Module } from '@nestjs/common';
-import { ObservedReposService } from 'src/observed-repos/service/observed-repos.service';
+import { FetcherModule } from 'src/fetcher/fetcher.module';
+import { ObservedReposModule } from 'src/observed-repos/observed-repos.module';
 import { PrismaService } from 'src/prisma.service';
-import { FetcherService } from '../fetcher/fetcher.service';
 import { CronService } from './cron.service';
 
 @Module({
+  imports: [FetcherModule, ObservedReposModule],
   controllers: [],
-  providers: [
-    CronService,
-    PrismaService,
-    Logger,
-    FetcherService,
-    ObservedReposService,
-  ],
+  providers: [CronService, PrismaService, Logger],
 })
 export class CronModule {}

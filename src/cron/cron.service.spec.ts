@@ -2,8 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { CronService } from './cron.service';
 import { Logger } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
-import { FetcherService } from '../fetcher/fetcher.service';
 import { ObservedReposService } from '../observed-repos/service/observed-repos.service';
+import { FetcherService } from 'src/fetcher/fetcher.service';
 
 describe('CronService', () => {
   let service: CronService;

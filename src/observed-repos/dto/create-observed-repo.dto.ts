@@ -1,3 +1,9 @@
+import { IsString } from 'class-validator';
+
 export class CreateObservedRepoDto {
-  // TODO
+  @IsString()
+  username: string;
+
+  @IsString()
+  repoName: string;
 }

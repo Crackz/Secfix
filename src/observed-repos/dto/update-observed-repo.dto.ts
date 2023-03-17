@@ -1,3 +1,7 @@
+import { IsEnum } from 'class-validator';
+import { ObservedRepoStatus } from '../interfaces/observed-repo-status';
+
 export class UpdateObservedRepoDto {
-  // TODO
+  @IsEnum(ObservedRepoStatus)
+  status: ObservedRepoStatus;
 }

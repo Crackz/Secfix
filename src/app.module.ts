@@ -4,7 +4,7 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CronModule } from './cron/cron.module';
-import { FetcherService } from './fetcher/fetcher.service';
+import { FetcherModule } from './fetcher/fetcher.module';
 import { ObservedReposModule } from './observed-repos/observed-repos.module';
 
 @Module({
@@ -13,8 +13,9 @@ import { ObservedReposModule } from './observed-repos/observed-repos.module';
     ObservedReposModule,
     ScheduleModule.forRoot(),
     CronModule,
+    FetcherModule,
   ],
   controllers: [AppController],
-  providers: [AppService, FetcherService],
+  providers: [AppService],
 })
 export class AppModule {}
